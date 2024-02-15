@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class Ball : MonoBehaviour
 {
-    public abstract void Clicked();
+    public abstract void Clicked(); // POLYMORPHISM
 
 }

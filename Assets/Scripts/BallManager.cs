@@ -30,7 +30,7 @@ public class BallManager : MonoBehaviour
         }
     }
 
-    private Vector3 RandomPosition()
+    private Vector3 RandomPosition() // ABSTRACTION
     {
         float x = Random.Range(-4.0f, 4.0f);
         float z = Random.Range(-4.0f, 4.0f);
@@ -40,14 +40,13 @@ public class BallManager : MonoBehaviour
         return position;
     }
 
-    private void HandleAction()
+    private void HandleAction() // ABSTRACTION
     {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
-            //the collider could be children of the unit, so we make sure to check in the parent
             var ball = hit.collider.GetComponent<Ball>();
             m_SelectedBall = ball;
 

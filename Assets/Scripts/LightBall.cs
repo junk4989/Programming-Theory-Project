@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightBall : Ball
+public class LightBall : Ball // INHERITANCE
 {
 
     private Color m_Color = Color.white;
     private Color m_EmissionColor = Color.red;
 
-    public Color color
+    public Color color // ENCAPSULATION
     {
         get { return m_Color; } 
         private set { m_Color = value; }
     }
 
-    public Color emissionColor
+    public Color emissionColor // ENCAPSULATION
     {
         get { return m_EmissionColor; }
         private set { m_EmissionColor = value; } 
@@ -23,7 +23,7 @@ public class LightBall : Ball
     private float intensity = 3.0f;
     private Material material;
 
-    public override void Clicked()
+    public override void Clicked() // POLYMORPHISM
     {
         StartCoroutine(Lightning());
     }
